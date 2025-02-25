@@ -1,5 +1,5 @@
 let listaNumeroSorteado =[];
-let numeroMaximo = 10;
+let numeroMaximo = 100;
 //1 armazena o numero aleatorio na variável
 let numeroSecreto = gerarNumeroAleatorio();
 let tentativa = 1;
@@ -19,7 +19,7 @@ function exibirTexto(tag,Texto){
 }
 //3 executa as funções de exibir textos na tela
 function exibirMensagemInicial(){
-exibirTexto('h1','Numero aleatório');
+exibirTexto('h1','Jogo do numero aleatório');
 exibirTexto('p','Qual é o número aleatório?');
 }
 exibirMensagemInicial();
