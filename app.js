@@ -4,7 +4,7 @@ let numeroMaximo = 10;
 let numeroSecreto = gerarNumeroAleatorio();
 let tentativa = 1;
 
-//2 cria a função para exibir texto na tela
+//2 cria a função para exibir texto na tela e ativar voz
 function exibirTexto(tag,Texto){
     let campo = document.querySelector(tag);
     campo.innerHTML = Texto ;
@@ -31,7 +31,7 @@ function gerarNumeroAleatorio() {
     if (numerosNaLista == numeroMaximo){ // caso a quantidade de numeros sorteados tenha atingido o length da lista, ela será zerada.
         listaNumeroSorteado = [];
     }
-    if (listaNumeroSorteado.includes(numeroSorteado)){
+    if (listaNumeroSorteado.includes(numeroSorteado)){ //caso o número gerado ja exista na lista, a função gera um novo número até encontrar um que não exista na lista
         return gerarNumeroAleatorio();
     }else{
         listaNumeroSorteado.push(numeroSorteado);
@@ -65,7 +65,7 @@ chute.value = ''
 }
 //reinicia o jogo atraves do 'onclick' do botão 'novo jogo'
 function reiniciar(){
-    numeroSecreto = gerarNumeroAleatorio();
+    numeroSecreto = gerarNumeroAleatorio(); // não adianta só chamar a função. É necessário armazenar novamente o valor gerado na variável
     exibirMensagemInicial();
     limparChute();
     tentativa = 1
